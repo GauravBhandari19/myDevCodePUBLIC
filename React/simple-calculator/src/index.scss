@@ -8,10 +8,22 @@ h1
 body
 {
     color: black;
-    background-color: dimgray;
+    background-color: whitesmoke;
 }
 
 #root
 {
     color: RED;
+}
+
+.col-lg-8
+{
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.row
+{
+    margin-left: 0px;
+    margin-right: 0px;
 }
