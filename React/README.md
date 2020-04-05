@@ -1,7 +1,6 @@
 # React Project
 
-```javascript
-if (isAwesome){
-  return true
-}
+## Install a new react JS Project
+```
+npx create-react-app simple-calculator
 ```
