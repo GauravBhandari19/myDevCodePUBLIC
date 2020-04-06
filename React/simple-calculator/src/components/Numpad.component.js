@@ -9,14 +9,15 @@ class Numpad extends React.Component
         return (
             <div className="form-group">
                 <div>
-                    <button type="button" value="1" className="btn btn-outline-primary col-1" onClick=
+                <button type="button" value="AC" className="btn btn-danger col-1" onClick=
+                        {this.props.onClick}>AC</button>
+                    <button type="button" value='1' className="btn btn-outline-primary col-1" onClick=
                         {this.props.onClick}>1</button>
                     <button type="button" value="2" className="btn btn-outline-primary col-1" onClick=
                         {this.props.onClick}>2</button>
                     <button type="button" value="3" className="btn btn-outline-primary col-1" onClick=
                         {this.props.onClick}>3</button>
-                    <button type="button" value="/" className="btn btn-outline-primary col-1" onClick=
-                        {this.props.onClick}>/</button>
+                    
                 </div>
                 <div>
                     <button type="button" value="4" className="btn btn-outline-primary col-1" onClick=
@@ -43,8 +44,12 @@ class Numpad extends React.Component
                         {this.props.onClick}>0</button>
                     <button type="button" value="-" className="btn btn-outline-primary col-1" onClick=
                         {this.props.onClick}>-</button>
-                        <button type="button" value="=" className="btn btn-outline-primary col-1" onClick=
+                        <button type="button" value="/" className="btn btn-outline-primary col-1" onClick=
+                        {this.props.onClick}>/</button>
+                    <button type="button" value="=" className="btn btn-outline-primary col-1" onClick=
                         {this.props.onClick}>=</button>
+                    
+                        
                     
                 </div>
             </div>

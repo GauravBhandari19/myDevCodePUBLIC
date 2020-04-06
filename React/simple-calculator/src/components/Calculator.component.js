@@ -10,7 +10,7 @@ class Calculator extends React.Component
         this.state=
         {
             total: 0,
-            currentNumber: "",
+            currentNumber: 0,
             lastNUmber: "",
             action: ""
 
@@ -20,46 +20,109 @@ class Calculator extends React.Component
     render()
     {
         return (
-            <div className="">
-                <Display total={this.state.currentNumber}/>
-                <Numpad onClick={this.onClick1}/>
+            <div className="row">
+
+                <div className="col-12">
+                    <Display total={this.state.currentNumber} className="col-12"/>
+                    <Numpad onClick={this.onClick1} className="col-12"/>
+                    
+                </div>
+               
             </div>
         )
+    }
+
+    componentDidUpdate()
+    {
+        
+        console.log("***************Component Did Update*************");
+        console.log("Current::"+Number(this.state.currentNumber));
+        console.log("Last::"+Number(this.state.lastNumber));
+        console.log("************************************************");
     }
 
     onClick1(e)
     {
         //console.log("Message Aaya");
         //console.log(e);
-        console.log("Current::"+this.state.currentNumber);
-        console.log("Last::"+this.state.lastNumber);
+        //console.log(" Incoming Value::"+e.target.value);
         if(e.target.value==="/" || e.target.value==="+" || e.target.value==="-" || e.target.value==="*")
         {
-            console.log("Setting New State");
+            //console.log("Setting New State");
             this.setState(
                 {
                     lastNumber: this.state.currentNumber,
-                    currentNumber: "",
+                    currentNumber: 0,
                     action: e.target.value
                 })
         }
-        if(e.target.value==="=")
+        else if(e.target.value==="=")
         {
-            this.setState
-            (
-                {
-                    currentNumber: this.state.currentNumber+this.state.lastNumber
-                }
+            if(this.state.action==="*")
+            {
+                this.setState
+                (
+                    {
+                        currentNumber: Number(this.state.currentNumber)*Number(this.state.lastNumber)
+                    }
+                )
+            }
+            else
+            if(this.state.action==="+")
+            {
+                this.setState
+                (
+                    {
+                        currentNumber: Number(this.state.currentNumber)+Number(this.state.lastNumber)
+                    }
+                )
+            }
+            else
+            if(this.state.action==="-")
+            {
+                this.setState
+                (
+                    {
+                        currentNumber: Number(this.state.lastNumber) - Number(this.state.currentNumber)
+                    }
+                )
+            }
+            else
+            if(this.state.action==="/")
+            {
+                this.setState
+                (
+                    {
+                        currentNumber: Number(this.state.lastNumber) / Number(this.state.currentNumber)
+                    }
+                )
+            }
+
+
+        }
+        else
+        if (e.target.value==="AC")
+        {
+            console.log("In Else")
+            this.setState({
+                total: 0,
+                currentNumber: 0,
+                lastNUmber: "",
+                action: ""
+    
+            }
             )
         }
         else
         {
-        console.log("In Else")
-        this.setState(
-        {
-            currentNumber: this.state.currentNumber+e.target.value
-        })
+            console.log("In Else")
+            this.setState({
+                currentNumber: this.state.currentNumber+e.target.value
+            }
+            )
         }
+
+        
     }
 }
 

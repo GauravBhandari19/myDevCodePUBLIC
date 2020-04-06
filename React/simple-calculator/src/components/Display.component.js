@@ -10,7 +10,7 @@ class Display extends React.Component
         return (
             <div className="form-group">
                 <h1 className="col-4">Simple Calculator</h1>
-                <input type="text" 
+                <input type="number" 
                 className="form-control-lg col-4 btn-outline-primary" 
                 id="displayCalsulation" value={this.props.total} readOnly></input>
             </div>
