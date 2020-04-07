@@ -1,6 +1,7 @@
 import React from 'react';
 import Numpad from './Numpad.component';
 import Display from './Display.component';
+import Calculation from './Calculation.component';
 
 class Calculator extends React.Component
 {
@@ -12,7 +13,9 @@ class Calculator extends React.Component
             total: 0,
             currentNumber: 0,
             lastNUmber: "",
-            action: ""
+            action: "",
+            steps: ""
+
 
         }
         this.onClick1 = this.onClick1.bind(this);
@@ -25,6 +28,7 @@ class Calculator extends React.Component
                 <div className="col-12">
                     <Display total={this.state.currentNumber}/>
                     <Numpad onClick={this.onClick1}/>
+                    <Calculation bla={this.state.steps}/>
                     
                 </div>
                
@@ -121,6 +125,11 @@ class Calculator extends React.Component
             }
             )
         }
+
+        this.setState({
+            steps: this.state.steps + e.target.value
+        })
+
 
         
     }
