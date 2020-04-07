@@ -23,8 +23,8 @@ class Calculator extends React.Component
             <div className="row">
 
                 <div className="col-12">
-                    <Display total={this.state.currentNumber} className="col-12"/>
-                    <Numpad onClick={this.onClick1} className="col-12"/>
+                    <Display total={this.state.currentNumber}/>
+                    <Numpad onClick={this.onClick1}/>
                     
                 </div>
                
