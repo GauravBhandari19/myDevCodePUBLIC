@@ -1,0 +1,52 @@
+openapi: 3.0.0
+info:
+  version: '0.1'
+  title: 'Simple Restful API'
+  description: 'Will be integrated with Python'
+servers:
+  - url: 'https://api.server.test/v1'
+    description: Server description
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/GauravBhandari19/simpleRestfulApi/0.1
+  - url: http://localhost4444
+components:
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: Basic
+security:
+  - BasicAuth: []
+
+paths:
+# Added by API Auto Mocking Plugin
+  /getuserinfo:    
+    get:
+      description: Return list of all users
+      responses:
+        '200':
+          description: Success Response
+          content:
+            appplication/json:
+              schema:
+                type: array
+                items: 
+                  type: object
+                  required:
+                    - username
+                  properties:
+                    username:
+                      type: string
+        '400':
+          description: Invalid Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:   
+                  message:
+                    type: string
+
+
+
+
+
