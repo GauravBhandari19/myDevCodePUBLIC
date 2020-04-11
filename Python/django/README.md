@@ -19,3 +19,8 @@ mysite/ -->Root Directory, can be any name, we got this name while creating proj
         asgi.py
         wsgi.py
 ```
+
+## Stant Django Server (You have to me in directory where manage.py is. 8111 in the command is port number)
+```
+ python manage.py runserver 8111
+```
