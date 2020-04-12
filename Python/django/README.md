@@ -1,15 +1,15 @@
 # Install Django
-```
+```python
 python -m pip install Django
 ```
 
 # Create your first Django Project
-```
+```python
 django-admin startproject mysite
 ```
 
 ## Directory Structure
-```
+```python
 mysite/ -->Root Directory, can be any name, we got this name while creating project
     manage.py -->
     mysite/ --> This Directory contains the actual Python Package
@@ -21,30 +21,55 @@ mysite/ -->Root Directory, can be any name, we got this name while creating proj
 ```
 
 ## Start Django Server (You have to be in directory where manage.py is. 8111 in the command is port number)
-```
+```python
  python manage.py runserver 8111
 ```
 
 ## Create new App, Poll, in the python project
-```
+```python
 python manage.py startapp polls
 ```
 
 ## Create Database Table (Database info in Settings.py, look for 'DATABASES = {')
-```
+```python
 python manage.py migrate
 ```
 
 ## Create Superuser Admin User
-```
+```python
 python manage.py createsuperuser
 ```
 
 ## Login to Admin (Go to the below URL in your browser)
-```
+```python
 http://127.0.0.1:8111/admin/
 ```
 
 ## How components are linked in Python
 
 ![Semantic description of image](overviewModel.svg "Image Title")
+
+
+# Some Commands and code reference
+
+## How to load an HTML (The template should be in templates folder of your app)
+```python
+def index(request):
+    template = loader.get_template('test1/index.html')
+    context = {
+        'Bla': 'BLA BLA BLA LIST',
+    }
+    output = 'BLA BLA'
+    return HttpResponse(template.render(context, request))
+```
+
+## Another way to load an HTML Template
+
+```python
+from django.shortcuts import render
+
+def index(request):
+    latest_question_list = Question.objects.order_by('-pub_date')[:5]
+    context = {'Bla': 'BLA BLA BLA'}
+    return render(request, 'test1/index.html', context)
+```
