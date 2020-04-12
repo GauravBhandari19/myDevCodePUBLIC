@@ -44,3 +44,7 @@ python manage.py createsuperuser
 ```
 http://127.0.0.1:8111/admin/
 ```
+
+## How components are linked in Python
+
+![Semantic description of image](overviewModel.svg "Image Title")
