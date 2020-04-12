@@ -20,7 +20,7 @@ mysite/ -->Root Directory, can be any name, we got this name while creating proj
         wsgi.py
 ```
 
-## Start Django Server (You have to me in directory where manage.py is. 8111 in the command is port number)
+## Start Django Server (You have to be in directory where manage.py is. 8111 in the command is port number)
 ```
  python manage.py runserver 8111
 ```
@@ -28,4 +28,19 @@ mysite/ -->Root Directory, can be any name, we got this name while creating proj
 ## Create new App, Poll, in the python project
 ```
 python manage.py startapp polls
+```
+
+## Create Database Table (Database info in Settings.py, look for 'DATABASES = {')
+```
+python manage.py migrate
+```
+
+## Create Superuser Admin User
+```
+python manage.py createsuperuser
+```
+
+## Login to Admin (Go to the below URL in your browser)
+```
+http://127.0.0.1:8111/admin/
 ```
