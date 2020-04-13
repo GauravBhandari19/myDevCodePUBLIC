@@ -23,7 +23,7 @@ def index22(request):
     return HttpResponse(template.render(context, request))
 
 def index(request):
-    context = {'Bla': 'BLA BLA BLA'}
+    context = {'latest_question_list': 'BLA BLA BLA'}
     return render(request, 'test1/index.html', context)
 
 def index1(request, question_id):

@@ -9,7 +9,7 @@ django-admin startproject mysite
 ```
 
 ## Directory Structure
-```python
+```
 mysite/ -->Root Directory, can be any name, we got this name while creating project
     manage.py -->
     mysite/ --> This Directory contains the actual Python Package
@@ -72,4 +72,15 @@ def index(request):
     latest_question_list = Question.objects.order_by('-pub_date')[:5]
     context = {'Bla': 'BLA BLA BLA'}
     return render(request, 'test1/index.html', context)
+```
+
+## Way to add CSS (Should be added under static folder in the app). 
+```
+Note: You should restart the server for static files to load. Once a static file is loaded and change in CSS will not need restart
+```
+
+```python
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'test1/style.css' %}">
 ```
