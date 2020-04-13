@@ -84,3 +84,12 @@ Note: You should restart the server for static files to load. Once a static file
 
 <link rel="stylesheet" type="text/css" href="{% static 'test1/style.css' %}">
 ```
+
+
+# Work with Models (Models are used mainly for databases)
+
+
+## Create Database table
+```
+python manage.py makemigrations test1
+```
