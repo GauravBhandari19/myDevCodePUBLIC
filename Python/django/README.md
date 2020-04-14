@@ -54,6 +54,9 @@ http://127.0.0.1:8111/admin/
 
 ## How to load an HTML (The template should be in templates folder of your app)
 ```python
+from django.http import HttpResponse
+from django.template import loader
+
 def index(request):
     template = loader.get_template('test1/index.html')
     context = {
