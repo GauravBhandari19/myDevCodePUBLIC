@@ -6,17 +6,17 @@
 Create index.js
 
 
-**Refer:** [index.js](https://github.com/GauravBhandari19/mydevcode/blob/master/Docker/simpleApp/index.js) 
+**Refer:** [index.js](https://github.com/GauravBhandari19/myDevCodePUBLIC/blob/master/Docker/simpleApp/index.js) 
 
 
 Create a package.json file (You can use "npm init" command too else copy below content)
 
-**Refer:** [package.json](https://github.com/GauravBhandari19/mydevcode/blob/master/Docker/simpleApp/package.json)
+**Refer:** [package.json](https://github.com/GauravBhandari19/myDevCodePUBLIC/blob/master/Docker/simpleApp/package.json)
 
 
 Create a Docker file (name: Dockerfile)
 
-**Refer:** [Dockerfile](https://github.com/GauravBhandari19/mydevcode/blob/master/Docker/simpleApp/Dockerfile) 
+**Refer:** [Dockerfile](https://github.com/GauravBhandari19/myDevCodePUBLIC/blob/master/Docker/simpleApp/Dockerfile) 
 
 
 Build an Image (you have to be where Dockerfile is)
