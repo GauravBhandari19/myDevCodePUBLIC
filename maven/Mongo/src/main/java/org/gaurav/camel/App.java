@@ -6,31 +6,17 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * Hello world!
- *
  */
-public class App 
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
+public class App {
+    public static void main(String[] args) {
         App a = new App();
         a.process();
 
 
     }
-    void process()
-    {
+
+    void process() {
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("application-context.xml");
-        CamelContext context = new DefaultCamelContext();
-        mongoRoute m = new mongoRoute();
-
-        try {
-            context.addRoutes(m);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        context.start();
 
     }
 }
